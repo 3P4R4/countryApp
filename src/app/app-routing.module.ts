@@ -19,6 +19,10 @@ import { ContactPageComponent } from './shared/pages/contact-page/contact-page.c
     component: ContactPageComponent
   },
   {
+    path:'countries',
+    loadChildren:()=> import('./countries/countries.module').then(m=>m.CountriesModule)
+  },
+  {
     path: '**',
     redirectTo: ''
   }

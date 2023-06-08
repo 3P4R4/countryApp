@@ -33,5 +33,12 @@ export class CountriesService {
                 catchError(()=> of([]))
         )
     }
+    searchAlpha(code:string):Observable<Country[]>{
+        const url = `${this.apiUrl}/alpha/${code}`;
+        return this.http.get<Country[]>(url)
+        .pipe(
+                catchError(()=> of([]))
+        )
+    }
     
 }
